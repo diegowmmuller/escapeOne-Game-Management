@@ -8,13 +8,13 @@ public class PlayerHeaderPanel extends JPanel {
     private final Font titleFont = new Font("Arial", Font.BOLD, 24);
     private final Color backgroundColor = new Color(45, 45, 45);
     private final Color textColor = Color.WHITE;
+    private final Dimension headerSize = new Dimension(0, 60);
+    private final JLabel title = new JLabel("Cadastro de Player", SwingConstants.CENTER);
 
     public PlayerHeaderPanel() {
         setLayout(new BorderLayout());
         setBackground(backgroundColor);
-        setPreferredSize(new Dimension(0, 60));
-
-        JLabel title = new JLabel("Cadastro de Player", SwingConstants.CENTER);
+        setPreferredSize(headerSize);
         title.setFont(titleFont);
         title.setForeground(textColor);
 

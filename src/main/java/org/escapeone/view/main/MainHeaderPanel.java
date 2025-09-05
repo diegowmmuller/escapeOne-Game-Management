@@ -9,16 +9,14 @@ public class MainHeaderPanel extends JPanel {
     private final Color backgroundColor = new Color(45, 45, 45); // fundo cinza escuro
     private final Color titleColor = Color.WHITE;                // texto branco
     private final Dimension headerSize = new Dimension(0, 140);
+    private final JLabel title = new JLabel("Escape One", SwingConstants.CENTER);
 
     public MainHeaderPanel() {
         setLayout(new BorderLayout());
         setBackground(backgroundColor);
         setPreferredSize(headerSize);
-
-        JLabel title = new JLabel("Escape One", SwingConstants.CENTER);
         title.setFont(titleFont);
         title.setForeground(titleColor);
-
         add(title, BorderLayout.CENTER);
     }
 }

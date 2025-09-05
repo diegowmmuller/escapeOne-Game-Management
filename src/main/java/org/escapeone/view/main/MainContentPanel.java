@@ -1,5 +1,6 @@
 package org.escapeone.view.main;
 
+import org.escapeone.view.game.GameFrame;
 import org.escapeone.view.player.PlayerFrame;
 
 import javax.swing.*;
@@ -13,12 +14,12 @@ public class MainContentPanel extends JPanel {
     private final Color buttonTextColor = Color.WHITE;
     private final Font buttonFont = new Font("Arial", Font.BOLD, 20);
 
-    private JButton btnRegisterGame;
-    private JButton btnRegisterPlayer;
-    private JButton btnSearch;
-    private JButton btnReport;
-    private JButton btnTutorial;
-    private JButton btnAbout;
+    private final JButton btnRegisterGame;
+    private final JButton btnRegisterPlayer;
+    private final JButton btnSearch;
+    private final JButton btnReport;
+    private final JButton btnTutorial;
+    private final JButton btnAbout;
 
     public MainContentPanel() {
         setBackground(backgroundColor);
@@ -61,6 +62,7 @@ public class MainContentPanel extends JPanel {
         // Button actions
         btnExit.addActionListener(exitAction());
         btnRegisterPlayer.addActionListener(openPlayerFrame());
+        btnRegisterGame.addActionListener(openGameFrame());
     }
 
     private JButton createButton(String text) {
@@ -85,6 +87,16 @@ public class MainContentPanel extends JPanel {
             playerFrame.setVisible(true);
             playerFrame.toFront();
             playerFrame.requestFocus();
+        };
+    }
+
+    private ActionListener openGameFrame(){
+
+        return e ->{
+            GameFrame gameFrame = new GameFrame();
+            gameFrame.setVisible(true);
+            gameFrame.toFront();
+            gameFrame.requestFocus();
         };
     }
 }
